@@ -1,0 +1,1 @@
+[{"name":"Swiss Beauty","price":3200,"image":"uploads\/swiss beauty.avif","quantity":1,"product_id":"58"},{"name":"YvesSaintLaurent","price":6000,"image":"uploads\/ysl.avif","quantity":1,"product_id":"59"}]

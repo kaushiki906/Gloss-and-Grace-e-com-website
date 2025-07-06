@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup</title>
+    <link rel="stylesheet" href="makeup_page.css">
+</head>
+
+<body>
+    <div class="vdo_container">
+        <video class="bg" loop autoplay="autoplay" muted>
+            <source src="./assets/makeup/makeup banner.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="navbar">
+        <div class="logo">
+            <h3>Gloss & Grace</h3>
+        </div>
+
+        <div class="menus">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#abouts">ABOUT</a></li>
+                <li><a href="#mvps">MVPs</a></li>
+                <li><a href="#t&t">TIPS&TRICKS</a></li>
+                <li><a href="#party">PARTY_APPROVED</a></li>
+                <li><a href="#t&c">TUTORIALS</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mini-slider-wrapper">
+        <h1 class="heading3"><span>Beauty</span> offers for Every<span>"Beauty"</span></h1>
+
+        <button class="slider-btn prev-btn" onclick="slideMini(-1)">&#10094;</button>
+
+        <div class="mini-slider" id="miniSlider">
+            <!-- First item: gif (as image) -->
+            <img src="./assets/makeup/vdo.gif" alt="GIF">
+            <img src="./assets/makeup/sixth.avif" alt="">
+            <img src="./assets/makeup/first.avif" alt="">
+            <img src="./assets/makeup/second.avif" alt="">
+            <img src="./assets/makeup/third.avif" alt="">
+            <img src="./assets/makeup/forth.avif" alt="">
+            <img src="./assets/makeup/fifth.avif" alt="">
+            <img src="./assets/makeup/seventh.avif" alt="">
+            <img src="./assets/makeup/eight.avif" alt="">
+            <img src="./assets/makeup/tenth.avif" alt="">
+            <img src="./assets/makeup/11th.avif" alt="">
+            <img src="./assets/makeup/12th.avif" alt="">
+            <img src="./assets/makeup/13th.avif" alt="">
+            <img src="./assets/makeup/14th.avif" alt="">
+            <img src="./assets/makeup/16th.avif" alt="">
+            <img src="./assets/makeup/17th.avif" alt="">
+            <img src="./assets/makeup/18th.avif" alt="">
+            <img src="./assets/makeup/19th.avif" alt="">
+            <img src="./assets/makeup/20th.avif" alt="">
+
+        </div>
+
+        <button class="slider-btn next-btn" onclick="slideMini(1)">&#10095;</button>
+    </div>
+
+    <script>
+        const slider = document.getElementById("miniSlider");
+        const totalSlides = slider.children.length;
+        const slideWidth = 220; // 200px + 2*10px margin
+        let index = 0;
+
+        function slideMini(direction) {
+            index += direction;
+            if (index < 0) index = 0;
+            if (index > totalSlides - 2) index = totalSlides - 2;
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        // Auto slide every 3 seconds
+        setInterval(() => {
+            index++;
+            if (index > totalSlides - 3) index = 0;
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        }, 3000);
+    </script>
+
+    <div class="about" id="abouts">
+        <h1 class="heading">About <span>Makeup</span></h1>
+
+        <div class="row">
+
+            <div class="vd2">
+                <video loop muted autoplay="autoplay">
+                    <source src="./assets/makeup/about/1st.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="content">
+                <h3>💄 Best Seller Lipstick</h3>
+                <p>Unleash the Power of Color
+                    Indulge in our top-selling lipsticks that blend luxury with long-lasting wear. With rich pigments,
+                    velvety textures, and nourishing formulas, our lipsticks are designed to enhance your beauty and
+                    boost your confidence — one swipe at a time.
+
+                    ✨ Every woman deserves a little color in her life... and a lot of compliments!</p>
+            </div>
+        </div>
+
+        <div class="row2">
+
+            <div class="content2">
+                <h3>✨ Makeup Tips for a Flawless Look</h3>
+                <p>Your Glow-Up Starts Here
+                    Discover the secrets to a flawless face with our expert-approved makeup tips! Whether you're a
+                    beauty beginner or a glam goddess, we’ve curated the ultimate guide to help you enhance your natural
+                    features, boost your glow, and feel confident every day. From base-perfecting hacks to the magic of
+                    blending, our tips are designed to elevate your look with ease.
+
+                    💫 Because flawless isn’t a filter — it’s a vibe!
+                </p>
+            </div>
+
+            <div class="vd3">
+                <video loop muted autoplay="autoplay">
+                    <source src="./assets/makeup/about/2nd.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="row3">
+
+            <div class="vd4">
+                <video loop muted autoplay="autoplay">
+                    <source src="./assets/makeup/about/3rd.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="content3">
+                <h3>💄 Pro-Level Makeup Tips</h3>
+                <p>Define. Enhance. Slay.
+                    Master the art of precise application with our expert makeup tips. Whether you’re perfecting your
+                    winged liner or elevating your everyday glam, our guide empowers you to bring out your best features
+                    with confidence. From tool selection to blending techniques, learn how to achieve a professional
+                    look that lasts all day — and turns heads every step of the way.
+
+                    ✨ Your beauty, your rules. Let your look do the talking.
+                </p>
+            </div>
+        </div>
+
+        <div class="row4">
+
+            <div class="content4">
+                <h3>🌟 New Arrival: LuxeGlow Palette</h3>
+                <p>Unleash your inner artist.
+                    Introducing the LuxeGlow Palette — your go-to for show-stopping eye and cheek looks. This all-in-one
+                    palette features richly pigmented shades that blend like a dream, from velvety mattes to
+                    shimmer-packed hues. Whether you’re crafting a soft daytime glow or going full glam for a night out,
+                    LuxeGlow brings endless possibilities to your beauty routine.
+
+                    ✨ Limited stock. Elevate your makeup game — one swipe at a time.
+                </p>
+            </div>
+
+            <div class="vd5">
+                <video loop muted autoplay="autoplay">
+                    <source src="./assets/makeup/about/4th.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="head">
+        <h1 class="heading3"><span>Latest</span> Launch </h1>
+    </div>
+
+    <div class="video-container">
+
+        <div class="video-row">
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/lash.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/lipstick.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/makeup6.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- 💖 Dior Banner Image -->
+    <div class="dior">
+        <h1 class="heading3">The <span>Scent</span> of <span>Elegance</span></h1>
+        <img src="./assets//makeup/dior.avif" alt="">
+    </div>
+
+    <div class="banner-container" id="mvps">
+        <img src="./assets/makeup/products/bann.avif" alt="Dior Banner">
+    </div>
+
+    <!-- 🌸 13-Image Grid -->
+    <div class="image-gallery">
+        <!-- Row 1 -->
+        <img src="./assets/makeup/products/ct.avif" alt="">
+        <img src="./assets/makeup/products/elf.avif" alt="">
+        <img src="./assets/makeup/products/loreal.avif" alt="">
+        <img src="./assets/makeup/products/Lip essentials.avif" alt="">
+        <img src="./assets/makeup/products/Lakme.avif" alt="">
+
+        <!-- Row 2 -->
+        <img src="./assets/makeup/products/facescanada.avif" alt="">
+        <img src="./assets/makeup/products/giorgia armani.avif" alt="">
+        <img src="./assets/makeup/products/kay.avif" alt="">
+        <img src="./assets/makeup/products/mars.avif" alt="">
+        <img src="./assets/makeup/products/maybelline.avif" alt="">
+
+        <!-- Row 3 (centered using empty divs) -->
+        <div class="empty"></div>
+        <img src="./assets/makeup/products/renee.avif" alt="">
+        <img src="./assets/makeup/products/swiss beauty.avif" alt="">
+        <img src="./assets/makeup/products/ysl.avif" alt="">
+        <div class="empty"></div>
+    </div>
+
+    <div class="head">
+        <h1 class="heading3">Some <span>Tips</span> and <span>Tricks</span> </h1>
+    </div>
+    <div class="video-container" id="t&t">
+        <div class="video-row">
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/video2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/makeover2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="lipstick-banner">
+        <div class="banner-image">
+            <img src="./assets/makeup/lipstick/lipstick bann 2.jpg" alt="">
+        </div>
+        <div class="banner-text">
+            <h1 class="heading4">Paint It Bold</h1>
+        </div>
+    </div>
+
+    <div class="lip_row">
+        <video autoplay muted loop>
+            <source src="./assets/makeup/lipstick/lipstick1.mp4">
+        </video>
+        <video autoplay muted loop>
+            <source src="./assets/makeup/lipstick/lipstick2.mp4">
+        </video>
+        <video autoplay muted loop>
+            <source src="./assets/makeup/lipstick/lipstick3.mp4">
+        </video>
+    </div>
+
+    <div class="stealer">
+        <div class="banner">
+            <img src="./assets/makeup/product3/bann.avif" alt="">
+        </div>
+
+        <div class="images">
+            <img src="./assets/makeup/product3/first.avif" alt="">
+            <img src="./assets/makeup/product3/second.avif" alt="">
+            <img src="./assets/makeup/product3/third.avif" alt="">
+            <img src="./assets/makeup/product3/forth.avif" alt="">
+            <img src="./assets/makeup/product3/fifth.avif" alt="">
+            <img src="./assets/makeup/product3/Sixth.avif" alt="">
+            <img src="./assets/makeup/product3/seventh.avif" alt="">
+            <img src="./assets/makeup/product3/eight.avif" alt="">
+            <img src="./assets/makeup/product3/ninth.avif" alt="">
+            <img src="./assets/makeup/product3/tenth.avif" alt="">
+        </div>
+    </div>
+
+    <div class="gift">
+        <div class="gift-banner">
+            <img src="./assets/makeup/gift image2.jpg" alt="">
+        </div>
+
+
+    </div>
+
+    <div class="party" id="party">
+        <div class="party-banner">
+            <img src="./assets/makeup/product2/bann.avif" alt="">
+        </div>
+
+        <div class="imgs">
+            <img src="./assets/makeup/product2/1st.avif" alt="">
+            <img src="./assets/makeup/product2/2nd.avif" alt="">
+            <img src="./assets/makeup/product2/3rd.avif" alt="">
+            <img src="./assets/makeup/product2/4th.avif" alt="">
+            <img src="./assets/makeup/product2/5th.avif" alt="">
+            <img src="./assets/makeup/product2/6th.avif" alt="">
+            <img src="./assets/makeup/product2/7th.avif" alt="">
+            <img src="./assets/makeup/product2/8th.avif" alt="">
+            <img src="./assets/makeup/product2/9th.avif" alt="">
+            <img src="./assets/makeup/product2/10th.avif" alt="">
+        </div>
+
+    </div>
+
+    <div class="vdo_sec">
+        <h1 class="heading3"><span>Beauty Picks </span> of the <span> Week</span> </h1>
+        <div class="vdo_row">
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo1.mp4">
+            </video>
+            <img src="./assets/makeup/vdo.gif" alt="">
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo3.mp4">
+            </video>
+        </div>
+    </div>
+
+    <div class="vdo_sec2">
+        <div class="vdo_row2">
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo4.mp4">
+            </video>
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo5.mp4">
+            </video>
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo6.mp4">
+            </video>
+        </div>
+    </div>
+
+    <div class="vdo_sec3">
+        <div class="vdo_row3">
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo7.mp4">
+            </video>
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo8.mp4">
+            </video>
+            <video autoplay muted loop>
+                <source src="./assets/makeup/vdo_sec/vdo9.mp4">
+            </video>
+        </div>
+    </div>
+
+    <div class="head" id="t&c">
+        <h1 class="heading3"><span>Tutorials </span> and<span>Classes</span> </h1>
+    </div>
+    <div class="video-container" id="t&t">
+        <div class="video-row">
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/random/1st.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/random/2nd.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video autoplay muted loop>
+                    <source src="./assets/makeup/random/3rd.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="video-container" id="t&t">
+            <div class="video-row">
+                <div class="video-card">
+                    <video autoplay muted loop>
+                        <source src="./assets/makeup/random/4th.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card">
+                    <video autoplay muted loop>
+                        <source src="./assets/makeup/random/5th.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card">
+                    <video autoplay muted loop>
+                        <source src="./assets/makeup/random/6th.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

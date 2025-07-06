@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Image Slider</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1024px;
+            margin: auto;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .navigation button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img alt="A placeholder image with text 'Image 1'" height="400" src="spa.png" width="800"/>
+            </div>
+            <div class="slide">
+                <img alt="A placeholder image with text 'Image 2'" height="400" src="third.png" width="800"/>
+            </div>
+            <div class="slide">
+                <img alt="A placeholder image with text 'Image 3'" height="400" src="second.png" width="800"/>
+            </div>
+        </div>
+        <div class="navigation">
+            <button id="prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelector('.slides');
+        const slide = document.querySelectorAll('.slide');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+
+        let index = 0;
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        function nextSlide() {
+            index = (index < slide.length - 1) ? index + 1 : 0;
+            showSlide(index);
+        }
+
+        prev.addEventListener('click', () => {
+            index = (index > 0) ? index - 1 : slide.length - 1;
+            showSlide(index);
+        });
+
+        next.addEventListener('click', () => {
+            index = (index < slide.length - 1) ? index + 1 : 0;
+            showSlide(index);
+        });
+
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    </script>
+</body>
+</html>
